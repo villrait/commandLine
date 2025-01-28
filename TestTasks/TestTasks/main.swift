@@ -24,3 +24,22 @@ class TestTask: Testable {
         show(doubleOptional2)
     }
 }
+
+//6. Напишите программу для вывода первых 15 чисел последовательности Фибоначчи
+
+class Fibonachi: Testable {
+    private func calculateFibonachi(_ int: Int) -> Int {
+        if int <= 1 {
+            return int
+        } else {
+            return calculateFibonachi(int - 1) + calculateFibonachi(int - 2)
+        }
+    }
+    
+    func runTest() {
+        for i in 0...15 {
+            print("calculateFibonachi: number \(i) = \(calculateFibonachi(i))")
+            
+        }
+    }
+}
