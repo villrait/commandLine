@@ -78,6 +78,37 @@ class Bubble: Testable {
 //
 //let bubble2 = [5,4,3,2,1]
 //bubble2.sorted { $0 < $1 }
+
+//8. Напишите программу, решающую задачу: есть входящая строка формата "abc123", где сначала идет любая последовательность букв, потом число. Необходимо получить новую строку, в конце которой будет число на единицу больше предыдущего, то есть "abc124".
+
+class IncrementNumberTask: Testable {
+    private func incrementNumber(_ string: String) -> String {
+
+        var result = string
+        
+        guard let lastNumberSubstring = string.components(separatedBy: CharacterSet.decimalDigits.inverted).last,
+              let number = Int(lastNumberSubstring),
+              let lastNumberRange = string.range(of: lastNumberSubstring) else {
+            return string
+        }
+
+        let incrementNumber = number + 1
+        
+        result.replaceSubrange(lastNumberRange, with: "\(incrementNumber)")
+
+        return result
+
+    }
+
+    func runTest() {
+        var text1 = "abc123"
+        
+        var incrementText1 = incrementNumber(text1)
+        
+        print("Increment text: \(text1) -> \(incrementText1)")
+    }
+}
+
 let tasks: [Testable] = [TestTask(), Fibonachi(), Bubble()]
 
 for task in tasks {
