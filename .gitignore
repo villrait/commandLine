@@ -1,11 +1,49 @@
-# macOS
-.DS_Store
-Thumbs.db
-*.tmp
-*.log
-*.bak
-*.swp
-*~
-
 # Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
 *.xcuserstate
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+build/
+*.hmap
+*.xcassets/
+*.playground
+*.xcplayground
+*.swiftdoc
+*.app
+*.ipa
+*.dSYM.zip
+*.crash
+*.framework
+*.bundle
+*.xctest
+*.xcscheme
+*.docset
+project.xcworkspace/
+xcuserdata/
+
+# CocoaPods
+Pods/
+*.podspec
+
+# Swift Package Manager
+.swiftpm/
+
+# Configuration Files
+*.xcconfig
+*.env
+.env.*
+*.plist
+
+# Other files
+*.log
+*.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
