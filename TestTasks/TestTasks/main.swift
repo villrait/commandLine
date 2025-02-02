@@ -163,7 +163,49 @@ class LocationTask: Testable {
     }
 }
 
-let tasks: [Testable] = [TestTask(), Fibonachi(), Bubble(), IncrementNumberTask(), ClosureTask(), LocationTask()]
+//11. Создать класс Rectangle с двумя неопциональными свойствами: ширина и длина. Реализовать в этом классе метод вычисляющий и выводящий в консоль периметр прямоугольника. Создать экземпляр класса и вызвать у него этот метод.
+
+
+class RectangleTask: Testable {
+    let width: Int
+    let lenght: Int
+    
+    init(width: Int, lenght: Int) {
+        self.width = width
+        self.lenght = lenght
+    }
+    
+    init() {
+        self.width = 0
+        self.lenght = 0
+    }
+    
+    private func calcPerimeter() {
+        let perimeter = (width + lenght) * 2
+        print("Perimeter = \(perimeter)")
+    }
+    
+    func runTest() {
+        let rectangle1 = RectangleTask(width: 4, lenght: 10)
+        let rectangle2 = RectangleTask(width: 3, lenght: 6)
+        
+        print("Rectangle 1:")
+        rectangle1.calcPerimeter()
+        print("Rectangle 2:")
+        rectangle2.calcPerimeter()
+
+        print("Rectangle 1 Area = \(rectangle1.area)")
+        print("Rectangle 2 Area = \(rectangle2.area)")
+    }
+}
+
+extension RectangleTask {
+    var area: Int {
+        return width * lenght
+    }
+}
+
+let tasks: [Testable] = [TestTask(), Fibonachi(), Bubble(), IncrementNumberTask(), ClosureTask(), LocationTask(), RectangleTask()]
 
 for task in tasks {
     print("\n")
