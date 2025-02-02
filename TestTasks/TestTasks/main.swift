@@ -22,7 +22,7 @@ class TestTask: Testable {
     
     func runTest() {
         let doubleOptional: Double? = 2.2
-        var doubleOptional2: Double?
+        let doubleOptional2: Double? = nil
         
         show(doubleOptional)
         show(doubleOptional2)
