@@ -26,6 +26,7 @@ build/
 *.docset
 project.xcworkspace/
 xcuserdata/
+*.xcworkspace/
 
 # CocoaPods
 Pods/
