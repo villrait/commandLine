@@ -170,7 +170,6 @@ class RectangleTask: Testable {
     let width: Int
     let lenght: Int
     
-    // Инициализатор с параметрами
     init(width: Int, lenght: Int) {
         self.width = width
         self.lenght = lenght
@@ -194,6 +193,15 @@ class RectangleTask: Testable {
         rectangle1.calcPerimeter()
         print("Rectangle 2:")
         rectangle2.calcPerimeter()
+
+        print("Rectangle 1 Area = \(rectangle1.area)")
+        print("Rectangle 2 Area = \(rectangle2.area)")
+    }
+}
+
+extension RectangleTask {
+    var area: Int {
+        return width * lenght
     }
 }
 
