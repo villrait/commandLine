@@ -21,7 +21,7 @@ class TestTask: Testable {
     }
     
     func runTest() {
-        var doubleOptional: Double? = 2.2
+        let doubleOptional: Double? = 2.2
         var doubleOptional2: Double?
         
         show(doubleOptional)
@@ -54,7 +54,7 @@ class Bubble: Testable {
     
     private func bubbleSort(array: [Int]) -> [Int] {
         var arr = array
-        var n = arr.count
+        let n = arr.count
         for i in 0..<n-1 {
             for j in 0..<n-i-1 {
                 if arr[j] > arr[j+1] {
@@ -101,9 +101,9 @@ class IncrementNumberTask: Testable {
     }
 
     func runTest() {
-        var text1 = "abc123"
+        let text1 = "abc123"
         
-        var incrementText1 = incrementNumber(text1)
+        let incrementText1 = incrementNumber(text1)
         
         print("Increment text: \(text1) -> \(incrementText1)")
     }
@@ -117,7 +117,7 @@ class ClosureTask: Testable {
     }
 
     func repeatTask(times: Int, task: () -> Void) {
-        for i in 0..<times {
+        for _ in 0..<times {
             task()
         }
     }
@@ -128,7 +128,42 @@ class ClosureTask: Testable {
     }
 }
 
-let tasks: [Testable] = [TestTask(), Fibonachi(), Bubble()]
+//10. Условия: есть начальная позиция на двумерной плоскости, можно осуществлять последовательность шагов по четырем направлениям up, down, left, right. Размерность каждого шага равна 1. Создать перечисление Directions с направлениями движения. Создать переменную location с начальными координатами (0,0), создать массив элементами которого будут направления из перечисления. Положить в этот массив следующую последовательность шагов: [.up, .up, .left, .down, .left, .down, .down, .right, .right, .down, .right]. Програмно вычислить какие будут координаты у переменной location после выполнения этой последовательности шагов.
+
+class LocationTask: Testable {
+    enum Directions {
+        case up
+        case left
+        case right
+        case down
+    }
+
+    var location = (x: 0, y: 0)
+
+    var steps: [Directions] = [.up, .up, .left, .down, .left, .down, .down, .right, .right, .down, .right]
+
+    func processSteps() {
+        for step in steps {
+            switch step {
+            case .right:
+                location.x += 1
+            case .left:
+                location.x -= 1
+            case .up:
+                location.y += 1
+            case .down:
+                location.y -= 1
+            }
+        }
+    }
+
+    func runTest() {
+        processSteps()
+        print(location)
+    }
+}
+
+let tasks: [Testable] = [TestTask(), Fibonachi(), Bubble(), IncrementNumberTask(), ClosureTask(), LocationTask()]
 
 for task in tasks {
     print("\n")
