@@ -75,9 +75,16 @@ class Bubble: Testable {
 }
 
 // ну или такой вариант мне более привычен и понятен(потому что чем больше в дебри логики кода начинаешь уходить, тем меньше я его понимаю)
+<<<<<<< HEAD
 //
+=======
 //let bubble2 = [5,4,3,2,1]
 //bubble2.sorted { $0 < $1 }
+>>>>>>> feature/solvery/feature-1
+
+import Foundation
+
+print("Hello, World!")
 let tasks: [Testable] = [TestTask(), Fibonachi(), Bubble()]
 
 for task in tasks {
