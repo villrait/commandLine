@@ -5,6 +5,9 @@
 *.perspectivev3
 xcuserdata/
 *.xcuserstate
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
 *.xcworkspace/xcuserdata/
 *.xcworkspace/xcshareddata/
 *.xcworkspace/xcuserdata/
